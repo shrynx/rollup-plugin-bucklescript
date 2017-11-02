@@ -46,6 +46,12 @@
     "lint-staged": "^4.3.0",
     "prettier-eslint-cli": "^4.4.0",
     "rollup": "^0.50.0",
-    "rollup-plugin-buble": "^0.16.0"
+    "rollup-plugin-buble": "^0.16.0",
+    "rollup-plugin-commonjs": "^8.2.6"
+  },
+  "dependencies": {
+    "bsb-js": "^1.0.1",
+    "read-bsconfig": "^1.0.3",
+    "rollup-pluginutils": "^2.0.1"
   }
 }
