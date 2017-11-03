@@ -25,13 +25,11 @@ export default (options = {}) => {
   return {
     name: 'bucklescript',
     resolveId: (importee, importer) => {
-      if (!importer) {
+      if (!filter(importer)) {
         return null;
       }
 
-      let relativePath = path.join(importer, '..', importee);
-
-      if (isRelative(importee) && !filter(relativePath)) {
+      if (isRelative(importee)) {
         const moduleDir = bsconfig.moduleDir;
         const bsSuffix = bsconfig.suffix;
 
@@ -44,7 +42,7 @@ export default (options = {}) => {
           inSourceBuild,
           bsSuffix
         );
-        relativePath = path.join(buildpath, '..', importee);
+        const relativePath = path.join(buildpath, '..', importee);
         return addExtension(relativePath, bsSuffix);
       }
       return null;

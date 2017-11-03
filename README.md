@@ -70,7 +70,7 @@ All the settings are taken from `bsconfig.json`, but few options can be overridd
 
 To specify bucklescript output type for rollup to consume.
 
-**Note: Please use `es6`.**
+**Note: Please check the Caveats section**
 
 ```javascript
 ...
@@ -127,6 +127,13 @@ plugins: [
 
 ## Examples
 Check the [examples folder](https://github.com/shrynx/rollup-plugin-bucklescript/tree/master/examples) in the github repo.
+
+# Caveats
+Please use `es6` for `module` option as rollup works only with es modules.
+But this breaks integration with with react, 
+thought it can be easily solved by following the helpful error message provided by rollup.
+
+or check the [react folder](https://github.com/shrynx/rollup-plugin-bucklescript/tree/master/examples/react)
 
 ## Acknowledgement
 
