@@ -61,6 +61,11 @@ export default {
 
 All the settings are taken from `bsconfig.json`, but few options can be overridden.
 
+### `include` and `exclude`
+
+ each a minimatch pattern, or array of minimatch patterns, which determines which files are complied by Bucklescript.
+ By default all  `.re` and `.ml` are included and all `.rei` and `.mli` are excluded.
+
 ### `module`
 
 To specify bucklescript output type for rollup to consume.
@@ -128,4 +133,5 @@ plugins: [
 -   [@bobzhang](https://github.com/bobzhang) and all contributors of bucklescript.
 
 ## License
+
 MIT
