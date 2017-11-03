@@ -1,15 +1,19 @@
 {
   "name": "rollup-plugin-bucklescript",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "rollup plugin for using buckescript compiler",
   "main": "dist/rollup-plugin-bucklescript.cjs.js",
   "module": "dist/rollup-plugin-bucklescript.es.js",
   "jsnext:main": "dist/rollup-plugin-bucklescript.es.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "format": "prettier-eslint --trailing-comma es5 --single-quote --write '**/*.js'",
     "precommit": "lint-staged",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepare": "npm run build"
   },
   "config": {
     "commitizen": {
