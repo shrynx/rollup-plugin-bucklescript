@@ -1,0 +1,12 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx '/Users/shriyans/Projects/javascript/libraries/rollup-plugin-bucklescript/examples/react/node_modules/bs-platform/bin/reactjs_jsx_ppx_2.exe'
+FLG -ppx /Users/shriyans/Projects/javascript/libraries/rollup-plugin-bucklescript/examples/react/node_modules/bs-platform/bin/bsppx.exe
+S /Users/shriyans/Projects/javascript/libraries/rollup-plugin-bucklescript/examples/react/node_modules/bs-platform/lib/ocaml
+B /Users/shriyans/Projects/javascript/libraries/rollup-plugin-bucklescript/examples/react/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -no-alias-deps -color always
+FLG -w -30-40+6+7+27+32..39+44+45+101
+S /Users/shriyans/Projects/javascript/libraries/rollup-plugin-bucklescript/examples/react/node_modules/reason-react/lib/ocaml
+B /Users/shriyans/Projects/javascript/libraries/rollup-plugin-bucklescript/examples/react/node_modules/reason-react/lib/ocaml
+S src
+B lib/bs/src
+####BSB GENERATED: NO EDIT}

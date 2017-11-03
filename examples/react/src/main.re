@@ -1,0 +1,1 @@
+let ele = <div />;
