@@ -1,0 +1,7 @@
+{
+  "name": "basic",
+  "sources": ["src"],
+  "package-specs": ["es6"],
+  "bsc-flags": ["-bs-super-errors"],
+  "refmt": 3
+}

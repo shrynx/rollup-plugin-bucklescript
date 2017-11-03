@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "bs-platform": "^2.0.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-bucklescript": "^0.4.0"
+  }
+}

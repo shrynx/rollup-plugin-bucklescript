@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "format": "prettier-eslint --trailing-comma es5 --single-quote --write '**/*.js'",
+    "format": "prettier-eslint --trailing-comma es5 --single-quote --write '**/*.js' 'packages/*/!(node_modules)/**/*.js'",
     "precommit": "lint-staged",
     "commit": "git-cz",
     "prepare": "npm run build"

@@ -125,6 +125,9 @@ plugins: [
 ]
 ```
 
+## Examples
+Check the [examples folder](https://github.com/shrynx/rollup-plugin-bucklescript/tree/master/examples) in the github repo.
+
 ## Acknowledgement
 
 -   [bs-loader](https://github.com/reasonml-community/bs-loader) - A webpack plugin for bucklescript,
