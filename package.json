@@ -7,7 +7,7 @@
   "jsnext:main": "dist/rollup-plugin-bucklescript.es.js",
   "scripts": {
     "build": "rollup -c",
-    "format": "prettier-eslint --trailing-comma es5 --single-quote --write '**/*.js' 'packages/*/!(node_modules)/**/*.js'",
+    "format": "prettier-eslint --trailing-comma es5 --single-quote --write '**/*.js'",
     "precommit": "lint-staged",
     "commit": "git-cz"
   },

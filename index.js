@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { createFilter } from 'rollup-pluginutils';
+import { createFilter, addExtension } from 'rollup-pluginutils';
 import { compileFile } from 'bsb-js';
 
 import getBsConfigModuleOptions from './helpers/getBsConfigModuleOptions';
@@ -29,7 +29,9 @@ export default (options = {}) => {
         return null;
       }
 
-      if (isRelative(importee)) {
+      let relativePath = path.join(importer, '..', importee);
+
+      if (isRelative(importee) && !filter(relativePath)) {
         const moduleDir = bsconfig.moduleDir;
         const bsSuffix = bsconfig.suffix;
 
@@ -42,14 +44,16 @@ export default (options = {}) => {
           inSourceBuild,
           bsSuffix
         );
-        return path.join(buildpath, '..', importee) + bsSuffix;
+        relativePath = path.join(buildpath, '..', importee);
+        return addExtension(relativePath, bsSuffix);
       }
       return null;
     },
     transform: function(code, id) {
       if (moduleDir !== 'es6') {
         throw new Error(
-          `Please "specify-packge" as "[es6]" in "bsconfig.json"`
+          `Please "specify-packge" as "[es6]" in "bsconfig.json"
+or  pass " module: 'es6' " in config options of bucklescript plugin`
         );
       }
       if (!filter(id)) {
