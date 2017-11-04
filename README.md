@@ -125,10 +125,19 @@ plugins: [
 ]
 ```
 
+### `includeStandardLibrary`
+
+**Note: This is an advance feature and may not work as intended**
+Bucklescript comes with OCaml standard library complied to javascript. 
+Choose whether to bundle functions from standard library.
+Defaults to `true`.
+
 ## Examples
+
 Check the [examples folder](https://github.com/shrynx/rollup-plugin-bucklescript/tree/master/examples) in the github repo.
 
 ## Caveats
+
 Please use `es6` for `module` option as rollup works only with es modules.
 But this breaks integration with with react, 
 thought it can be easily solved by following the helpful error message provided by rollup.

@@ -5,6 +5,10 @@ import { compileFile } from 'bsb-js';
 import getBsConfigModuleOptions from './helpers/getBsConfigModuleOptions';
 import jsFilePath from './helpers/jsFilePath';
 import isRelative from './helpers/isRelative';
+import {
+  isStandardLibrary,
+  resolveStandardLibrary,
+} from './helpers/standardLibraryHelper';
 
 export default (options = {}) => {
   const filter = createFilter(
@@ -21,10 +25,27 @@ export default (options = {}) => {
   const moduleDir = options.module || bsconfig.moduleDir;
   const bsSuffix = bsconfig.suffix;
   const inSourceBuild = options.inSource || bsconfig.inSource || false;
+  const includeStandardLibrary =
+    options.includeStandardLibrary !== undefined
+      ? options.includeStandardLibrary
+      : true;
+
+  const warn = msg => console.warn(msg);
 
   return {
     name: 'bucklescript',
     resolveId: (importee, importer) => {
+      if (isStandardLibrary(importee)) {
+        if (includeStandardLibrary) {
+          return resolveStandardLibrary(importee, importer);
+        } else {
+          warn(`You have disabled "includeStandardLibrary" option.
+Make sure you know what you are doing.
+Please make sure you check out the README
+https://github.com/shrynx/rollup-plugin-bucklescript#includeStandardLibrary`);
+        }
+      }
+
       if (!filter(importer)) {
         return null;
       }
@@ -51,7 +72,8 @@ export default (options = {}) => {
       if (moduleDir !== 'es6') {
         throw new Error(
           `Please "specify-packge" as "[es6]" in "bsconfig.json"
-or  pass " module: 'es6' " in config options of bucklescript plugin`
+or  pass " module: 'es6' " in config options of bucklescript plugin
+https://github.com/shrynx/rollup-plugin-bucklescript#caveats`
         );
       }
       if (!filter(id)) {
