@@ -1,6 +1,6 @@
 # rollup-plugin-bucklescript
 
-![dependency-status](https://david-dm.org/shrynx/rollup-plugin-bucklescript.svg?path=rollup-plugin-bucklescript)
+![dependency-status](https://david-dm.org/shrynx/rollup-plugin-bucklescript.svg)
 [![npm version](https://badge.fury.io/js/rollup-plugin-bucklescript.svg)](https://badge.fury.io/js/rollup-plugin-bucklescript)
 
 > [bucklescript](https://github.com/BuckleScript/bucklescript) compiler plugin for [rollup.js](https://rollupjs.org/)
