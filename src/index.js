@@ -51,11 +51,6 @@ https://github.com/shrynx/rollup-plugin-bucklescript#includeStandardLibrary`);
       }
 
       if (isRelative(importee)) {
-        const moduleDir = bsconfig.moduleDir;
-        const bsSuffix = bsconfig.suffix;
-
-        const inSourceBuild = options.inSource || bsconfig.inSource || false;
-
         const buildpath = jsFilePath(
           buildDir,
           moduleDir,
@@ -71,7 +66,7 @@ https://github.com/shrynx/rollup-plugin-bucklescript#includeStandardLibrary`);
     transform: function(code, id) {
       if (moduleDir !== 'es6') {
         throw new Error(
-          `Please "specify-packge" as "[es6]" in "bsconfig.json"
+          `Please "package-specs" as "[es6]" in "bsconfig.json"
 or  pass " module: 'es6' " in config options of bucklescript plugin
 https://github.com/shrynx/rollup-plugin-bucklescript#caveats`
         );

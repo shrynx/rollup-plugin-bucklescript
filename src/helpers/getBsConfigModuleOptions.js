@@ -12,7 +12,7 @@ const getBsConfigModuleOptions = buildDir => {
 
   if (!bsconfig['package-specs'] || !bsconfig['package-specs'].length) {
     const options = {
-      moduleDir: 'js',
+      moduleDir: 'es6',
       inSource: false,
       suffix,
     };
