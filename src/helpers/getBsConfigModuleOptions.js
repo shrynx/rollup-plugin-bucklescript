@@ -1,4 +1,5 @@
 import { readBsConfigSync } from 'read-bsconfig';
+import getPackageSpecs from './getPackageSpecs';
 
 const getBsConfigModuleOptions = buildDir => {
   const bsconfig = readBsConfigSync(buildDir);
@@ -9,21 +10,7 @@ const getBsConfigModuleOptions = buildDir => {
 
   const bsSuffix = bsconfig.suffix;
   const suffix = typeof bsSuffix === 'string' ? bsSuffix : '.js';
-
-  if (!bsconfig['package-specs'] || !bsconfig['package-specs'].length) {
-    const options = {
-      moduleDir: 'es6',
-      inSource: false,
-      suffix,
-    };
-    return options;
-  }
-
-  const moduleSpec = bsconfig['package-specs'][0];
-  const moduleDir =
-    typeof moduleSpec === 'string' ? moduleSpec : moduleSpec.module;
-  const inSource =
-    typeof moduleSpec === 'string' ? false : moduleSpec['in-source'];
+  const { moduleDir, inSource } = getPackageSpecs(bsconfig['package-specs']);
 
   const options = { moduleDir, inSource, suffix };
   return options;
