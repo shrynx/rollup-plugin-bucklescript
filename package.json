@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-bucklescript",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "rollup plugin for using buckescript compiler",
   "main": "dist/rollup-plugin-bucklescript.cjs.js",
   "module": "dist/rollup-plugin-bucklescript.es.js",
